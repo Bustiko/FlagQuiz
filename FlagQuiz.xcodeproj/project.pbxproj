@@ -69,6 +69,7 @@
 				C9A0CBD02A7A559300071BB0 /* Models */,
 				C9A0CBD12A7A55A100071BB0 /* View */,
 				C9A0CBCB2A7A555700071BB0 /* Controllers */,
+				C9A0CBBF2A7A547600071BB0 /* Info.plist */,
 				C9A0CBD22A7A55BA00071BB0 /* Files */,
 			);
 			path = FlagQuiz;
@@ -103,7 +104,6 @@
 		C9A0CBD22A7A55BA00071BB0 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				C9A0CBBF2A7A547600071BB0 /* Info.plist */,
 				C9A0CBBC2A7A547600071BB0 /* LaunchScreen.storyboard */,
 				C9A0CBBA2A7A547600071BB0 /* Assets.xcassets */,
 				C9A0CBB72A7A547500071BB0 /* Main.storyboard */,

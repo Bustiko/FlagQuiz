@@ -27,7 +27,7 @@ struct UIFunctions {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
-        label.font = UIFont(name: fontName, size: 25)
+        label.font = UIFont(name: "\(fontName)", size: 25)
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         
@@ -39,7 +39,7 @@ struct UIFunctions {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = placeholder
-        textField.font = UIFont(name: fontName, size: 14)
+        textField.font = UIFont(name: "\(fontName)", size: 14)
         textField.textAlignment = .left
         textField.borderStyle = .roundedRect
         
