@@ -10,11 +10,13 @@ import UIKit
 struct MainScreenUIFunctions {
     
     private let uiFunctions = UIFunctions()
+    var nameTextField = UITextField()
+    var descriptionLabel = UILabel()
     
-    internal func setupViews(on view: UIView, target: Any?, action: Selector?) {
+    internal mutating func setupViews(on view: UIView, target: Any?, action: Selector?) {
         let title = uiFunctions.makeBigLabel(withText: "FLAG QUIZ")
-        let descriptionLabel = uiFunctions.makeLabel(withText: "Enter your name here:", fontSize: 25)
-        let nameTextField = uiFunctions.makeTextField(withPlaceholder: "Username")
+        descriptionLabel = uiFunctions.makeLabel(withText: "Enter your name here:", fontSize: 25)
+        nameTextField = uiFunctions.makeTextField(withPlaceholder: "Username")
         let button = uiFunctions.makeButton(withText: "START")
         
         view.addSubview(title)
@@ -42,4 +44,14 @@ struct MainScreenUIFunctions {
         }
         
     }
+    
+    func getTextField() -> UITextField {
+        return nameTextField
+    }
+    
+    func getNameFieldLabel() -> UILabel {
+        return descriptionLabel
+    }
+    
+    
 }
