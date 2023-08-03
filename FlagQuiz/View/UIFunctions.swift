@@ -51,6 +51,7 @@ struct UIFunctions {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.text = text
+        button.titleLabel?.textColor = .white
         
         var config = UIButton.Configuration.filled()
         config.cornerStyle = .capsule

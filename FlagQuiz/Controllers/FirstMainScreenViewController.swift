@@ -10,6 +10,7 @@ import UIKit
 class FirstMainScreenViewController: UIViewController {
     
     private let uiFunctions = UIFunctions()
+    
    
 
 
@@ -21,7 +22,7 @@ class FirstMainScreenViewController: UIViewController {
     
     func setupViews() {
         let title = uiFunctions.makeBigLabel(withText: "FLAG QUIZ")
-        let descriptionLabel = uiFunctions.makeLabel(withText: "Enter your name here:")
+        let descriptionLabel = uiFunctions.makeLabel(withText: "Enter your name here:", fontSize: 25)
         let nameTextField = uiFunctions.makeTextField(withPlaceholder: "Username")
         let button = uiFunctions.makeButton(withText: "START")
         

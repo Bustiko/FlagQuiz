@@ -11,11 +11,7 @@ class QuizPageViewController: UIViewController {
     
     var uiFunctions = UIFunctions()
     let leftRightMargin: CGFloat = 16
-    let buttonToImageMargin: CGFloat = 120
-    let buttonHeight: CGFloat = 60
-    let buttonWidth: CGFloat = 170
-    let buttonToButtonMargin: CGFloat = 14
-    let topBtnTobottomBtnMargin: CGFloat = 32
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
