@@ -9,8 +9,6 @@ import UIKit
 
 struct UIFunctions {
     
-    
-    
     let fontName = "ChalkboardSE"
     
     internal func makeBigLabel(withText text: String) -> UILabel {

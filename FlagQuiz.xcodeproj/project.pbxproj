@@ -23,6 +23,7 @@
 		C9A0CBC82A7A552900071BB0 /* QuizPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBC72A7A552900071BB0 /* QuizPageViewController.swift */; };
 		C9A0CBCA2A7A554200071BB0 /* ScorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBC92A7A554200071BB0 /* ScorePageViewController.swift */; };
 		C9A0CBD42A7A565300071BB0 /* UIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBD32A7A565300071BB0 /* UIFunctions.swift */; };
+		C9B29E122A7BF95300B4B64B /* PlayerCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B29E112A7BF95300B4B64B /* PlayerCredentials.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C9A0CBC72A7A552900071BB0 /* QuizPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPageViewController.swift; sourceTree = "<group>"; };
 		C9A0CBC92A7A554200071BB0 /* ScorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePageViewController.swift; sourceTree = "<group>"; };
 		C9A0CBD32A7A565300071BB0 /* UIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFunctions.swift; sourceTree = "<group>"; };
+		C9B29E112A7BF95300B4B64B /* PlayerCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCredentials.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C93DE0A82A7BD253007CDFD2 /* FlagManager.swift */,
+				C9B29E112A7BF95300B4B64B /* PlayerCredentials.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				C93DE0A92A7BD253007CDFD2 /* FlagManager.swift in Sources */,
 				C93DE0A12A7BB11A007CDFD2 /* MainScreenUIFunctions.swift in Sources */,
 				C9A0CBB42A7A547500071BB0 /* SceneDelegate.swift in Sources */,
+				C9B29E122A7BF95300B4B64B /* PlayerCredentials.swift in Sources */,
 				C9A0CBC82A7A552900071BB0 /* QuizPageViewController.swift in Sources */,
 				C9A0CBC62A7A550E00071BB0 /* SecondMainScreenViewController.swift in Sources */,
 				C93DE0A52A7BB77B007CDFD2 /* ScorePageUIFunctions.swift in Sources */,

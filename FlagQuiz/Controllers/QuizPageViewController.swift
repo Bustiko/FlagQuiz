@@ -7,9 +7,12 @@
 
 import UIKit
 
+
+
 class QuizPageViewController: UIViewController {
 
     var uiFunctions = QuizPageUIFunctions()
+    var playerCredentials = PlayerCredentials()
     
     
     override func viewDidLoad() {
@@ -25,8 +28,14 @@ class QuizPageViewController: UIViewController {
             print("correct answer")
             let destinationVC = QuizPageViewController()
             destinationVC.modalPresentationStyle = .fullScreen
-            destinationVC.uiFunctions.heartsLeft = 2
+            destinationVC.uiFunctions.heartsLabel.text = "\(playerCredentials.heartsLeft) ❤️"
             self.present(destinationVC, animated: false, completion: nil)
+        } else {
+            playerCredentials.heartsLeft -= 1
+            DispatchQueue.main.async {
+                self.uiFunctions.heartsLabel.text = "\(self.playerCredentials.heartsLeft) ❤️"
+            }
+            
         }
         
     }
