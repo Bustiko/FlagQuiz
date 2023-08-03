@@ -9,6 +9,8 @@ import UIKit
 
 struct UIFunctions {
     
+    let countries = FlagManager().countries
+    
     let fontName = "ChalkboardSE"
     
     internal func makeBigLabel(withText text: String) -> UILabel {
@@ -43,6 +45,7 @@ struct UIFunctions {
         textField.textAlignment = .left
         textField.borderStyle = .roundedRect
         
+        
         return textField
     }
     
@@ -73,7 +76,9 @@ struct UIFunctions {
     internal func makeImageView(withImage imageName: String) -> UIImageView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: imageName)
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.image = UIImage(named: countries.randomElement()!)
         
         return imageView
     }

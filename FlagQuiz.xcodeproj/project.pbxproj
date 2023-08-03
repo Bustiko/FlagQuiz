@@ -12,6 +12,7 @@
 		C93DE0A32A7BB472007CDFD2 /* QuizPageUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DE0A22A7BB472007CDFD2 /* QuizPageUIFunctions.swift */; };
 		C93DE0A52A7BB77B007CDFD2 /* ScorePageUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DE0A42A7BB77B007CDFD2 /* ScorePageUIFunctions.swift */; };
 		C93DE0A72A7BBFEA007CDFD2 /* SecondMainPageUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DE0A62A7BBFEA007CDFD2 /* SecondMainPageUIFunctions.swift */; };
+		C93DE0A92A7BD253007CDFD2 /* FlagManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DE0A82A7BD253007CDFD2 /* FlagManager.swift */; };
 		C9A0CBB22A7A547500071BB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBB12A7A547500071BB0 /* AppDelegate.swift */; };
 		C9A0CBB42A7A547500071BB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBB32A7A547500071BB0 /* SceneDelegate.swift */; };
 		C9A0CBB62A7A547500071BB0 /* FirstMainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBB52A7A547500071BB0 /* FirstMainScreenViewController.swift */; };
@@ -30,6 +31,7 @@
 		C93DE0A22A7BB472007CDFD2 /* QuizPageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPageUIFunctions.swift; sourceTree = "<group>"; };
 		C93DE0A42A7BB77B007CDFD2 /* ScorePageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePageUIFunctions.swift; sourceTree = "<group>"; };
 		C93DE0A62A7BBFEA007CDFD2 /* SecondMainPageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMainPageUIFunctions.swift; sourceTree = "<group>"; };
+		C93DE0A82A7BD253007CDFD2 /* FlagManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagManager.swift; sourceTree = "<group>"; };
 		C9A0CBAE2A7A547500071BB0 /* FlagQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A0CBB12A7A547500071BB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A0CBB32A7A547500071BB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		C9A0CBD02A7A559300071BB0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C93DE0A82A7BD253007CDFD2 /* FlagManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				C9A0CBB22A7A547500071BB0 /* AppDelegate.swift in Sources */,
 				C93DE09F2A7B9CAD007CDFD2 /* CurrentScoreView.swift in Sources */,
 				C9A0CBCA2A7A554200071BB0 /* ScorePageViewController.swift in Sources */,
+				C93DE0A92A7BD253007CDFD2 /* FlagManager.swift in Sources */,
 				C93DE0A12A7BB11A007CDFD2 /* MainScreenUIFunctions.swift in Sources */,
 				C9A0CBB42A7A547500071BB0 /* SceneDelegate.swift in Sources */,
 				C9A0CBC82A7A552900071BB0 /* QuizPageViewController.swift in Sources */,

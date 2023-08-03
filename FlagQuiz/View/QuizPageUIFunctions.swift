@@ -11,12 +11,13 @@ struct QuizPageUIFunctions {
     
     private let uiFunctions = UIFunctions()
     private let leftRightMargin: CGFloat = 16
+    var imageView = UIImageView()
     
-    internal func setupViews(on view: UIView, target: Any?, action: Selector?) {
+    internal mutating func setupViews(on view: UIView, target: Any?, action: Selector?) {
         let heartsLabel = uiFunctions.makeLabel(withText: "3 ♥️", fontSize: 25)
         let progressView = uiFunctions.makeProgressView()
         let progressLabel = uiFunctions.makeLabel(withText: "0/10", fontSize: 20)
-        let imageView = uiFunctions.makeImageView(withImage: "Flag-Norway")
+        imageView = uiFunctions.makeImageView(withImage: "Norway")
         let button1 = uiFunctions.makeButton(withText: "Norway")
         let button2 = uiFunctions.makeButton(withText: "Ireland")
         let button3 = uiFunctions.makeButton(withText: "Spain")
@@ -75,8 +76,13 @@ struct QuizPageUIFunctions {
         
         if let safeAction = action, let safeTarget = target {
             button1.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
+            button2.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
+            button3.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
+            button4.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
         }
-        
-        
+    }
+    
+    func getImageView() -> UIImageView {
+        return imageView
     }
 }
