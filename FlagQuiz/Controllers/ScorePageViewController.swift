@@ -13,7 +13,7 @@ class ScorePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = .white
         setupViews()
     }
     
@@ -23,6 +23,7 @@ class ScorePageViewController: UIViewController {
         
         let scoreView = CurrentScoreView(currentScore: 7)
         scoreView.translatesAutoresizingMaskIntoConstraints = false
+        scoreView.backgroundColor = .gray
         
         let bestScoreLabel = uiFunctions.makeLabel(withText: "⭐️Best Score: 7", fontSize: 25)
         
@@ -32,6 +33,8 @@ class ScorePageViewController: UIViewController {
         view.addSubview(wellDoneLabel)
         view.addSubview(scoreView)
         view.addSubview(bestScoreLabel)
+        view.addSubview(playAgainButton)
+        view.addSubview(mainMenuButton)
         
         NSLayoutConstraint.activate([
             wellDoneLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),

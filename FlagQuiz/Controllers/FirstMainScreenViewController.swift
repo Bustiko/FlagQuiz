@@ -46,8 +46,14 @@ class FirstMainScreenViewController: UIViewController {
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         button.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-
+        button.addTarget(self, action: #selector(startButtonPressed), for: .touchUpInside)
+        
+    }
     
+    @objc func startButtonPressed() {
+        let destinationVC = QuizPageViewController()
+        destinationVC.modalPresentationStyle = .fullScreen
+        self.present(destinationVC, animated: true, completion: nil)
     }
 
 

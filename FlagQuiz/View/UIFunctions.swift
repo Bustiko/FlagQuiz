@@ -27,7 +27,7 @@ struct UIFunctions {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
-        label.font = UIFont(name: fontName, size: fontSize)
+        label.font = UIFont(name: "\(fontName)-Regular", size: fontSize)
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         
@@ -39,7 +39,7 @@ struct UIFunctions {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = placeholder
-        textField.font = UIFont(name: fontName, size: 14)
+        textField.font = UIFont(name: "\(fontName)-Regular", size: 14)
         textField.textAlignment = .left
         textField.borderStyle = .roundedRect
         
@@ -50,7 +50,7 @@ struct UIFunctions {
     internal func makeButton(withText text: String) -> UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.titleLabel?.text = text
+        button.setTitle(text, for: .normal)
         button.titleLabel?.textColor = .white
         
         var config = UIButton.Configuration.filled()

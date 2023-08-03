@@ -15,7 +15,7 @@ class QuizPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = UIColor.white
         setupViews()
     }
     
@@ -28,6 +28,15 @@ class QuizPageViewController: UIViewController {
         let button2 = uiFunctions.makeButton(withText: "Ireland")
         let button3 = uiFunctions.makeButton(withText: "Spain")
         let button4 = uiFunctions.makeButton(withText: "Netherlands")
+        
+        view.addSubview(heartsLabel)
+        view.addSubview(progressView)
+        view.addSubview(progressLabel)
+        view.addSubview(imageView)
+        view.addSubview(button1)
+        view.addSubview(button2)
+        view.addSubview(button3)
+        view.addSubview(button4)
         
         
         NSLayoutConstraint.activate([
@@ -71,7 +80,15 @@ class QuizPageViewController: UIViewController {
             button4.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100)
         ])
         
+        button1.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
+        
+    }
+    
+    @objc func buttonPressed() {
+        let destinationVC = ScorePageViewController()
+        destinationVC.modalPresentationStyle = .fullScreen
+        self.present(destinationVC, animated: true, completion: nil)
     }
     
     
