@@ -9,7 +9,7 @@ import UIKit
 
 struct UIFunctions {
     
-    let countries = FlagManager().countries
+    
     
     let fontName = "ChalkboardSE"
     
@@ -78,7 +78,7 @@ struct UIFunctions {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.borderWidth = 1
         imageView.layer.borderColor = UIColor.black.cgColor
-        imageView.image = UIImage(named: countries.randomElement()!)
+        imageView.image = UIImage(named: imageName)
         
         return imageView
     }

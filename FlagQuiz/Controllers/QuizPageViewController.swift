@@ -10,7 +10,7 @@ import UIKit
 class QuizPageViewController: UIViewController {
 
     var uiFunctions = QuizPageUIFunctions()
-    let flagImageView = QuizPageUIFunctions().imageView
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,12 @@ class QuizPageViewController: UIViewController {
     
     
     @objc func buttonPressed(_ sender: UIButton) {
-//        let destinationVC = SecondMainScreenViewController()
-//        destinationVC.modalPresentationStyle = .fullScreen
-//        self.present(destinationVC, animated: true, completion: nil)
-        
-        if sender.titleLabel?.text == "Norway" {
+        if sender.titleLabel?.text == uiFunctions.rightAnswerButton.titleLabel?.text {
             print("correct answer")
+            let destinationVC = QuizPageViewController()
+            destinationVC.modalPresentationStyle = .fullScreen
+            destinationVC.uiFunctions.heartsLeft = 2
+            self.present(destinationVC, animated: false, completion: nil)
         }
         
     }

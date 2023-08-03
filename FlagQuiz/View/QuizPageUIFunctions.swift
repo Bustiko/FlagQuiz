@@ -11,17 +11,28 @@ struct QuizPageUIFunctions {
     
     private let uiFunctions = UIFunctions()
     private let leftRightMargin: CGFloat = 16
-    var imageView = UIImageView()
+    let countries = FlagManager().countries
+    var randomCountryName = ""
+    var rightAnswerButton = UIButton()
+    var heartsLeft = 3
+    
+    var button1 = UIButton()
+    var button2 = UIButton()
+    var button3 = UIButton()
+    var button4 = UIButton()
     
     internal mutating func setupViews(on view: UIView, target: Any?, action: Selector?) {
-        let heartsLabel = uiFunctions.makeLabel(withText: "3 ♥️", fontSize: 25)
+        
+        randomCountryName = countries.randomElement()!
+        
+        let heartsLabel = uiFunctions.makeLabel(withText: "\(heartsLeft) ♥️", fontSize: 25)
         let progressView = uiFunctions.makeProgressView()
         let progressLabel = uiFunctions.makeLabel(withText: "0/10", fontSize: 20)
-        imageView = uiFunctions.makeImageView(withImage: "Norway")
-        let button1 = uiFunctions.makeButton(withText: "Norway")
-        let button2 = uiFunctions.makeButton(withText: "Ireland")
-        let button3 = uiFunctions.makeButton(withText: "Spain")
-        let button4 = uiFunctions.makeButton(withText: "Netherlands")
+        let imageView = uiFunctions.makeImageView(withImage: randomCountryName)
+        button1 = uiFunctions.makeButton(withText: countries.randomElement()!)
+        button2 = uiFunctions.makeButton(withText: countries.randomElement()!)
+        button3 = uiFunctions.makeButton(withText: countries.randomElement()!)
+        button4 = uiFunctions.makeButton(withText: countries.randomElement()!)
         
         view.addSubview(heartsLabel)
         view.addSubview(progressView)
@@ -32,6 +43,7 @@ struct QuizPageUIFunctions {
         view.addSubview(button3)
         view.addSubview(button4)
         
+        selectButton()
         
         NSLayoutConstraint.activate([
             heartsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
@@ -82,7 +94,28 @@ struct QuizPageUIFunctions {
         }
     }
     
-    func getImageView() -> UIImageView {
-        return imageView
+    mutating func selectButton() {
+        let randomInt = Int.random(in: 1...4)
+        
+        switch(randomInt) {
+            
+        case 1: rightAnswerButton = button1
+        case 2: rightAnswerButton = button2
+        case 3: rightAnswerButton = button3
+        case 4: rightAnswerButton = button4
+            
+        default: break
+        }
+        
+        updateButtonTitle(button: rightAnswerButton)
+        
     }
+    
+    func updateButtonTitle(button: UIButton) {
+        DispatchQueue.main.async {
+            button.titleLabel?.text = randomCountryName
+        }
+    }
+    
+    
 }
