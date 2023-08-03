@@ -20,10 +20,12 @@ class QuizPageViewController: UIViewController {
     
     
     @objc func buttonPressed() {
-        let destinationVC = ScorePageViewController()
-        destinationVC.modalPresentationStyle = .fullScreen
-        self.present(destinationVC, animated: true, completion: nil)
+//        let destinationVC = SecondMainScreenViewController()
+//        destinationVC.modalPresentationStyle = .fullScreen
+//        self.present(destinationVC, animated: true, completion: nil)
     }
+    
+    
     
     
 }

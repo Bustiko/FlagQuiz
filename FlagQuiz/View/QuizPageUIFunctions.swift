@@ -64,13 +64,13 @@ struct QuizPageUIFunctions {
             button3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             button3.heightAnchor.constraint(equalToConstant: 62),
             button3.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 16),
-            button3.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+            button3.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             
             button4.widthAnchor.constraint(equalToConstant: 172),
             button4.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             button4.heightAnchor.constraint(equalToConstant: 62),
             button4.topAnchor.constraint(equalTo: button2.bottomAnchor, constant: 16),
-            button4.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100)
+            button4.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
         ])
         
         if let safeAction = action, let safeTarget = target {
