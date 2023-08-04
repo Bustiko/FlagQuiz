@@ -8,13 +8,14 @@
 import UIKit
 
 struct QuizPageUIFunctions {
-    private let playerCredentails = PlayerCredentials()
+    
     private let uiFunctions = UIFunctions()
     private let leftRightMargin: CGFloat = 16
     let countries = FlagManager().countries
     var randomCountryName = ""
     var rightAnswerButton = UIButton()
     var heartsLabel = UILabel()
+    
     
     var button1 = UIButton()
     var button2 = UIButton()
@@ -25,9 +26,10 @@ struct QuizPageUIFunctions {
         
         randomCountryName = countries.randomElement()!
         
-        heartsLabel = uiFunctions.makeLabel(withText: "\(playerCredentails.heartsLeft) ♥️", fontSize: 25)
+        heartsLabel = uiFunctions.makeLabel(withText: "\(heartsLeft) ♥️", fontSize: 25)
         let progressView = uiFunctions.makeProgressView()
-        let progressLabel = uiFunctions.makeLabel(withText: "0/10", fontSize: 20)
+        progressView.progress = progress
+        let progressLabel = uiFunctions.makeLabel(withText: "\(Int(progress*10))/10", fontSize: 20)
         let imageView = uiFunctions.makeImageView(withImage: randomCountryName)
         button1 = uiFunctions.makeButton(withText: countries.randomElement()!)
         button2 = uiFunctions.makeButton(withText: countries.randomElement()!)

@@ -8,12 +8,12 @@
 import UIKit
 
 
+var heartsLeft = 3
+var progress: Float = 0.0
 
 class QuizPageViewController: UIViewController {
 
-    var uiFunctions = QuizPageUIFunctions()
-    var playerCredentials = PlayerCredentials()
-    
+    private var uiFunctions = QuizPageUIFunctions()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +22,38 @@ class QuizPageViewController: UIViewController {
     }
     
     
-    
     @objc func buttonPressed(_ sender: UIButton) {
         if sender.titleLabel?.text == uiFunctions.rightAnswerButton.titleLabel?.text {
             print("correct answer")
+            
+            progress += 0.1
+            trackProgress()
+            
             let destinationVC = QuizPageViewController()
             destinationVC.modalPresentationStyle = .fullScreen
-            destinationVC.uiFunctions.heartsLabel.text = "\(playerCredentials.heartsLeft) ❤️"
+            
             self.present(destinationVC, animated: false, completion: nil)
+            
         } else {
-            playerCredentials.heartsLeft -= 1
+            heartsLeft -= 1
             DispatchQueue.main.async {
-                self.uiFunctions.heartsLabel.text = "\(self.playerCredentials.heartsLeft) ❤️"
+                self.uiFunctions.heartsLabel.text = "\(heartsLeft) ❤️"
             }
             
         }
+    }
+    
+    
+    func trackProgress() {
         
+        if Int(progress*10) == 10 {
+            
+            let finalDestinationVC = ScorePageViewController()
+            finalDestinationVC.modalPresentationStyle = .fullScreen
+            
+            self.present(finalDestinationVC, animated: true, completion: nil)
+            
+        }
     }
     
     
