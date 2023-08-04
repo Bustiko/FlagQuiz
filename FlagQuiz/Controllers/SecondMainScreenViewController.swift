@@ -9,7 +9,8 @@ import UIKit
 
 class SecondMainScreenViewController: UIViewController {
     
-    let uiFunctions = SecondMainPageUIFunctions()
+    var uiFunctions = SecondMainPageUIFunctions()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,9 @@ class SecondMainScreenViewController: UIViewController {
     }
     
     @objc func startButtonPressed() {
+        progress = 0
+        heartsLeft = 3
+        
         let destinationVC = QuizPageViewController()
         destinationVC.modalPresentationStyle = .fullScreen
         self.present(destinationVC, animated: true, completion: nil)

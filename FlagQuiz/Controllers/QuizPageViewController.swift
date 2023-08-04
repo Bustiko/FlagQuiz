@@ -14,6 +14,7 @@ var progress: Float = 0.0
 class QuizPageViewController: UIViewController {
 
     private var uiFunctions = QuizPageUIFunctions()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class QuizPageViewController: UIViewController {
             print("correct answer")
             
             progress += 0.1
-            trackProgress()
+            TrackProgressLogic.trackProgress(uiVC: self)
             
             let destinationVC = QuizPageViewController()
             destinationVC.modalPresentationStyle = .fullScreen
@@ -36,27 +37,12 @@ class QuizPageViewController: UIViewController {
             
         } else {
             heartsLeft -= 1
+            TrackProgressLogic.trackHearts(uiVC: self)
             DispatchQueue.main.async {
                 self.uiFunctions.heartsLabel.text = "\(heartsLeft) ❤️"
             }
             
         }
     }
-    
-    
-    func trackProgress() {
-        
-        if Int(progress*10) == 10 {
-            
-            let finalDestinationVC = ScorePageViewController()
-            finalDestinationVC.modalPresentationStyle = .fullScreen
-            
-            self.present(finalDestinationVC, animated: true, completion: nil)
-            
-        }
-    }
-    
-    
-    
     
 }

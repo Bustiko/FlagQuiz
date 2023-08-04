@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C91785392A7D028B0039DB10 /* TrackProgressLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91785382A7D028B0039DB10 /* TrackProgressLogic.swift */; };
+		C917853C2A7D0F220039DB10 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C917853A2A7D0F220039DB10 /* DataModel.xcdatamodeld */; };
+		C91785612A7D124D0039DB10 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91785602A7D124D0039DB10 /* UserDataManager.swift */; };
 		C93DE09F2A7B9CAD007CDFD2 /* CurrentScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DE09E2A7B9CAD007CDFD2 /* CurrentScoreView.swift */; };
 		C93DE0A12A7BB11A007CDFD2 /* MainScreenUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DE0A02A7BB11A007CDFD2 /* MainScreenUIFunctions.swift */; };
 		C93DE0A32A7BB472007CDFD2 /* QuizPageUIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DE0A22A7BB472007CDFD2 /* QuizPageUIFunctions.swift */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C91785382A7D028B0039DB10 /* TrackProgressLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackProgressLogic.swift; sourceTree = "<group>"; };
+		C917853B2A7D0F220039DB10 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		C91785602A7D124D0039DB10 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		C93DE09E2A7B9CAD007CDFD2 /* CurrentScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentScoreView.swift; sourceTree = "<group>"; };
 		C93DE0A02A7BB11A007CDFD2 /* MainScreenUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUIFunctions.swift; sourceTree = "<group>"; };
 		C93DE0A22A7BB472007CDFD2 /* QuizPageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPageUIFunctions.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 				C9A0CBCB2A7A555700071BB0 /* Controllers */,
 				C9A0CBD22A7A55BA00071BB0 /* Files */,
 				C9A0CBBF2A7A547600071BB0 /* Info.plist */,
+				C917853A2A7D0F220039DB10 /* DataModel.xcdatamodeld */,
 			);
 			path = FlagQuiz;
 			sourceTree = "<group>";
@@ -102,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				C93DE0A82A7BD253007CDFD2 /* FlagManager.swift */,
+				C91785382A7D028B0039DB10 /* TrackProgressLogic.swift */,
+				C91785602A7D124D0039DB10 /* UserDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,9 +211,12 @@
 			files = (
 				C9A0CBD42A7A565300071BB0 /* UIFunctions.swift in Sources */,
 				C93DE0A32A7BB472007CDFD2 /* QuizPageUIFunctions.swift in Sources */,
+				C91785612A7D124D0039DB10 /* UserDataManager.swift in Sources */,
 				C9A0CBB62A7A547500071BB0 /* FirstMainScreenViewController.swift in Sources */,
 				C9A0CBB22A7A547500071BB0 /* AppDelegate.swift in Sources */,
 				C93DE09F2A7B9CAD007CDFD2 /* CurrentScoreView.swift in Sources */,
+				C91785392A7D028B0039DB10 /* TrackProgressLogic.swift in Sources */,
+				C917853C2A7D0F220039DB10 /* DataModel.xcdatamodeld in Sources */,
 				C9A0CBCA2A7A554200071BB0 /* ScorePageViewController.swift in Sources */,
 				C93DE0A92A7BD253007CDFD2 /* FlagManager.swift in Sources */,
 				C93DE0A12A7BB11A007CDFD2 /* MainScreenUIFunctions.swift in Sources */,
@@ -430,6 +442,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C917853A2A7D0F220039DB10 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C917853B2A7D0F220039DB10 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = C917853B2A7D0F220039DB10 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C9A0CBA62A7A547500071BB0 /* Project object */;
 }

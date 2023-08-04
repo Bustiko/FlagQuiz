@@ -10,10 +10,13 @@ import UIKit
 struct SecondMainPageUIFunctions {
     
     private let uiFunctions = UIFunctions()
+   
+    var userDataManager = UserDataManager()
     
-    internal func setupViews(on view: UIView, target: Any?, action: Selector?) {
+    internal mutating func setupViews(on view: UIView, target: Any?, action: Selector?) {
+        let userName = (userDataManager.fetchUserName()!)
         
-        let label = uiFunctions.makeLabel(withText: "Welcome Back User!", fontSize: 30)
+        let label = uiFunctions.makeLabel(withText: "Welcome Back \(userName)!", fontSize: 30)
         label.textAlignment = .center
         
         let bigLabel = uiFunctions.makeBigLabel(withText: "Flag Quiz")
