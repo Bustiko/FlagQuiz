@@ -11,7 +11,7 @@ struct QuizPageUIFunctions {
     
     private let uiFunctions = UIFunctions()
     private let leftRightMargin: CGFloat = 16
-    let countries = FlagManager().countries
+    var countries = FlagManager().countries
     var randomCountryName = ""
     var rightAnswerButton = UIButton()
     var heartsLabel = UILabel()
@@ -25,15 +25,30 @@ struct QuizPageUIFunctions {
     internal mutating func setupViews(on view: UIView, target: Any?, action: Selector?) {
         
         randomCountryName = countries.randomElement()!
+        let index = countries.firstIndex(of: randomCountryName)!
+        countries.remove(at: index)
+        
+        let choiseOne = countries.randomElement()!
+        let indexOne = countries.firstIndex(of: choiseOne)!
+        countries.remove(at: indexOne)
+        
+        let choiseTwo = countries.randomElement()!
+        let indexTwo = countries.firstIndex(of: choiseTwo)!
+        countries.remove(at: indexTwo)
+        
+        let choiseThree = countries.randomElement()!
+        let indexThree = countries.firstIndex(of: choiseThree)!
+        countries.remove(at: indexThree)
+        
         
         heartsLabel = uiFunctions.makeLabel(withText: "\(heartsLeft) ♥️", fontSize: 25)
         let progressView = uiFunctions.makeProgressView()
         progressView.progress = progress
         let progressLabel = uiFunctions.makeLabel(withText: "\(Int(progress*10))/10", fontSize: 20)
         let imageView = uiFunctions.makeImageView(withImage: randomCountryName)
-        button1 = uiFunctions.makeButton(withText: countries.randomElement()!)
-        button2 = uiFunctions.makeButton(withText: countries.randomElement()!)
-        button3 = uiFunctions.makeButton(withText: countries.randomElement()!)
+        button1 = uiFunctions.makeButton(withText: choiseOne)
+        button2 = uiFunctions.makeButton(withText: choiseTwo)
+        button3 = uiFunctions.makeButton(withText: choiseThree)
         button4 = uiFunctions.makeButton(withText: countries.randomElement()!)
         
         view.addSubview(heartsLabel)
