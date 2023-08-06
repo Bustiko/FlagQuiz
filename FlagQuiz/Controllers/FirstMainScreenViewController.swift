@@ -37,7 +37,7 @@ class FirstMainScreenViewController: UIViewController {
         
         if let name = uiFunctions.getTextField().text, !name.isEmpty {
             userName = name
-            userDataManager.manageData(name: name, bestScore: 8)
+            userDataManager.manageData(name: name)
             self.present(destinationVC, animated: true, completion: nil)
         }else {
             DispatchQueue.main.async {

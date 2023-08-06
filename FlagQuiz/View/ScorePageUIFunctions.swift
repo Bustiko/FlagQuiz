@@ -11,9 +11,13 @@ struct ScorePageUIFunctions {
     
     private let uiFunctions = UIFunctions()
     var userDataManager = UserDataManager()
+    var bestScoreLogic = BestScoreLogic()
     
-    internal func setupViews(on view: UIView, target: Any?, actionOne: Selector?, actionTwo: Selector?) {
+    internal mutating func setupViews(on view: UIView, target: Any?, actionOne: Selector?, actionTwo: Selector?) {
         let userName = (userDataManager.fetchUserName()!)
+        bestScoreLogic.findBestScore()
+        let bestScore = (userDataManager.fetchBestScore()!)
+        
         
         let wellDoneLabel = uiFunctions.makeLabel(withText: "Well Done \(userName)!", fontSize: 30)
         wellDoneLabel.textAlignment = .center
@@ -27,11 +31,11 @@ struct ScorePageUIFunctions {
             noHeartsLabel.isHidden = true
         }
         
-        let scoreView = CurrentScoreView(currentScore: 7)
+        let scoreView = CurrentScoreView(currentScore: (Int(progress*10)))
         scoreView.translatesAutoresizingMaskIntoConstraints = false
         scoreView.backgroundColor = .gray
         
-        let bestScoreLabel = uiFunctions.makeLabel(withText: "⭐️Best Score: 7", fontSize: 25)
+        let bestScoreLabel = uiFunctions.makeLabel(withText: "⭐️Best Score: \(bestScore)", fontSize: 25)
         
         let playAgainButton = uiFunctions.makeButton(withText: "Play Again")
         let mainMenuButton = uiFunctions.makeButton(withText: "Main Menu")

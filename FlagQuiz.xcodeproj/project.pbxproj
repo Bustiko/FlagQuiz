@@ -26,6 +26,7 @@
 		C9A0CBC82A7A552900071BB0 /* QuizPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBC72A7A552900071BB0 /* QuizPageViewController.swift */; };
 		C9A0CBCA2A7A554200071BB0 /* ScorePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBC92A7A554200071BB0 /* ScorePageViewController.swift */; };
 		C9A0CBD42A7A565300071BB0 /* UIFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A0CBD32A7A565300071BB0 /* UIFunctions.swift */; };
+		C9C350922A8013AC00084385 /* BestScoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C350912A8013AC00084385 /* BestScoreLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		C9A0CBC72A7A552900071BB0 /* QuizPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPageViewController.swift; sourceTree = "<group>"; };
 		C9A0CBC92A7A554200071BB0 /* ScorePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePageViewController.swift; sourceTree = "<group>"; };
 		C9A0CBD32A7A565300071BB0 /* UIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFunctions.swift; sourceTree = "<group>"; };
+		C9C350912A8013AC00084385 /* BestScoreLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestScoreLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				C93DE0A82A7BD253007CDFD2 /* FlagManager.swift */,
 				C91785382A7D028B0039DB10 /* TrackProgressLogic.swift */,
 				C91785602A7D124D0039DB10 /* UserDataManager.swift */,
+				C9C350912A8013AC00084385 /* BestScoreLogic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				C9A0CBC62A7A550E00071BB0 /* SecondMainScreenViewController.swift in Sources */,
 				C93DE0A52A7BB77B007CDFD2 /* ScorePageUIFunctions.swift in Sources */,
 				C93DE0A72A7BBFEA007CDFD2 /* SecondMainPageUIFunctions.swift in Sources */,
+				C9C350922A8013AC00084385 /* BestScoreLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
