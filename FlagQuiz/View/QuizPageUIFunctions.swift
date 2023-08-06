@@ -9,56 +9,48 @@ import UIKit
 
 struct QuizPageUIFunctions {
     
-    private let uiFunctions = UIFunctions()
+    var uiFunctions = UIFunctions()
     private let leftRightMargin: CGFloat = 16
     var countries = FlagManager().countries
     var randomCountryName = ""
     var rightAnswerButton = UIButton()
     var heartsLabel = UILabel()
-    
-    
-    var button1 = UIButton()
-    var button2 = UIButton()
-    var button3 = UIButton()
-    var button4 = UIButton()
-    
+    var buttons: [UIButton] = []
+    var choices: [String] = []
+    let totalButtonNumber = 3
+
     internal mutating func setupViews(on view: UIView, target: Any?, action: Selector?) {
-        
+    
         randomCountryName = countries.randomElement()!
         let index = countries.firstIndex(of: randomCountryName)!
         countries.remove(at: index)
-        
-        let choiseOne = countries.randomElement()!
-        let indexOne = countries.firstIndex(of: choiseOne)!
-        countries.remove(at: indexOne)
-        
-        let choiseTwo = countries.randomElement()!
-        let indexTwo = countries.firstIndex(of: choiseTwo)!
-        countries.remove(at: indexTwo)
-        
-        let choiseThree = countries.randomElement()!
-        let indexThree = countries.firstIndex(of: choiseThree)!
-        countries.remove(at: indexThree)
-        
+
+        for _ in 0...totalButtonNumber {
+            let randomCountry = countries.randomElement()!
+            let index = countries.firstIndex(of: randomCountry)!
+            countries.remove(at: index)
+            choices.append(randomCountry)
+        }
         
         heartsLabel = uiFunctions.makeLabel(withText: "\(heartsLeft) ♥️", fontSize: 25)
         let progressView = uiFunctions.makeProgressView()
         progressView.progress = progress
         let progressLabel = uiFunctions.makeLabel(withText: "\(Int(progress*10))/10", fontSize: 20)
         let imageView = uiFunctions.makeImageView(withImage: randomCountryName)
-        button1 = uiFunctions.makeButton(withText: choiseOne)
-        button2 = uiFunctions.makeButton(withText: choiseTwo)
-        button3 = uiFunctions.makeButton(withText: choiseThree)
-        button4 = uiFunctions.makeButton(withText: countries.randomElement()!)
         
         view.addSubview(heartsLabel)
         view.addSubview(progressView)
         view.addSubview(progressLabel)
         view.addSubview(imageView)
-        view.addSubview(button1)
-        view.addSubview(button2)
-        view.addSubview(button3)
-        view.addSubview(button4)
+        
+        for x in 0...totalButtonNumber {
+            let button = uiFunctions.makeButton(withText: choices[x])
+            buttons.append(button)
+            view.addSubview(buttons[x])
+            if let safeAction = action, let safeTarget = target {
+                buttons[x].addTarget(safeTarget, action: safeAction, for: .touchUpInside)
+            }
+        }
         
         selectButton()
         
@@ -76,56 +68,44 @@ struct QuizPageUIFunctions {
             imageView.topAnchor.constraint(equalTo: progressLabel.bottomAnchor, constant: 70),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -leftRightMargin),
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor , constant: leftRightMargin),
-            imageView.heightAnchor.constraint(equalToConstant: 220),
-            
-            button1.widthAnchor.constraint(equalToConstant: 172),
-            button1.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            button1.heightAnchor.constraint(equalToConstant: 62),
-            button1.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120),
-            button1.bottomAnchor.constraint(equalTo: button3.topAnchor, constant: -16),
-            
-            button2.widthAnchor.constraint(equalToConstant: 172),
-            button2.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            button2.heightAnchor.constraint(equalToConstant: 62),
-            button2.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120),
-            button2.bottomAnchor.constraint(equalTo: button4.topAnchor, constant: -16),
-            
-            button3.widthAnchor.constraint(equalToConstant: 172),
-            button3.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            button3.heightAnchor.constraint(equalToConstant: 62),
-            button3.topAnchor.constraint(equalTo: button1.bottomAnchor, constant: 16),
-            button3.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-            
-            button4.widthAnchor.constraint(equalToConstant: 172),
-            button4.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            button4.heightAnchor.constraint(equalToConstant: 62),
-            button4.topAnchor.constraint(equalTo: button2.bottomAnchor, constant: 16),
-            button4.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            imageView.heightAnchor.constraint(equalToConstant: 220)
         ])
         
-        if let safeAction = action, let safeTarget = target {
-            button1.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
-            button2.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
-            button3.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
-            button4.addTarget(safeTarget, action: safeAction, for: .touchUpInside)
+        for x in 0...totalButtonNumber {
+            if x == 0 || x == 1 {
+                if x == 1 {
+                    buttons[x].trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+                } else {
+                    buttons[x].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+                }
+                buttons[x].widthAnchor.constraint(equalToConstant: 172).isActive = true
+                buttons[x].heightAnchor.constraint(equalToConstant: 62).isActive = true
+                buttons[x].topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120).isActive = true
+                buttons[x].bottomAnchor.constraint(equalTo: buttons[2].topAnchor, constant: -16).isActive = true
+            } else {
+                
+                if x == 2 {
+                    buttons[x].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+                } else {
+                    buttons[3].trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+                }
+                buttons[x].widthAnchor.constraint(equalToConstant: 172).isActive = true
+                buttons[x].heightAnchor.constraint(equalToConstant: 62).isActive = true
+                buttons[3].topAnchor.constraint(equalTo: buttons[1].bottomAnchor, constant: 16).isActive = true
+            }
         }
     }
     
     mutating func selectButton() {
-        let randomInt = Int.random(in: 1...4)
+        let randomInt = Int.random(in: 0...totalButtonNumber)
         
-        switch(randomInt) {
-            
-        case 1: rightAnswerButton = button1
-        case 2: rightAnswerButton = button2
-        case 3: rightAnswerButton = button3
-        case 4: rightAnswerButton = button4
-            
-        default: break
+        for x in 0...totalButtonNumber {
+            if x == randomInt {
+                rightAnswerButton = buttons[x]
+            }
         }
         
         updateButtonTitle(button: rightAnswerButton)
-        
     }
     
     func updateButtonTitle(button: UIButton) {
@@ -133,6 +113,4 @@ struct QuizPageUIFunctions {
             button.titleLabel?.text = randomCountryName
         }
     }
-    
-    
 }
