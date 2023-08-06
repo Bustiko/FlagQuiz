@@ -72,26 +72,22 @@ struct QuizPageUIFunctions {
         ])
         
         for x in 0...totalButtonNumber {
-            if x == 0 || x == 1 {
-                if x == 1 {
-                    buttons[x].trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-                } else {
-                    buttons[x].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-                }
-                buttons[x].widthAnchor.constraint(equalToConstant: 172).isActive = true
-                buttons[x].heightAnchor.constraint(equalToConstant: 62).isActive = true
-                buttons[x].topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120).isActive = true
-                buttons[x].bottomAnchor.constraint(equalTo: buttons[2].topAnchor, constant: -16).isActive = true
-            } else {
+            
+            buttons[x].widthAnchor.constraint(equalToConstant: 172).isActive = true
+            buttons[x].heightAnchor.constraint(equalToConstant: 62).isActive = true
+            
+            if x % 2 == 0 {
+                buttons[x].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
                 
-                if x == 2 {
-                    buttons[x].leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-                } else {
-                    buttons[3].trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-                }
-                buttons[x].widthAnchor.constraint(equalToConstant: 172).isActive = true
-                buttons[x].heightAnchor.constraint(equalToConstant: 62).isActive = true
-                buttons[3].topAnchor.constraint(equalTo: buttons[1].bottomAnchor, constant: 16).isActive = true
+            } else {
+                buttons[x].trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+            }
+            
+            if x < 2 {
+                buttons[x].topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 120).isActive = true
+                buttons[x].bottomAnchor.constraint(equalTo: buttons[x+2].topAnchor, constant: -16).isActive = true
+            } else {
+                buttons[x].topAnchor.constraint(equalTo: buttons[x-2].bottomAnchor, constant: 16).isActive = true
             }
         }
     }
