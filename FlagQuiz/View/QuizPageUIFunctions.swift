@@ -17,7 +17,7 @@ struct QuizPageUIFunctions {
     var heartsLabel = UILabel()
     var buttons: [UIButton] = []
     var choices: [String] = []
-    let totalButtonNumber = 3
+    let totalButtonNumber = 5
 
     internal mutating func setupViews(on view: UIView, target: Any?, action: Selector?) {
     

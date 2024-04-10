@@ -57,6 +57,7 @@ struct UIFunctions {
         var config = UIButton.Configuration.filled()
         config.cornerStyle = .capsule
         config.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16)
+        
         button.configuration = config
         
         

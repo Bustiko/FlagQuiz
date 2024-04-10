@@ -7,10 +7,6 @@
 
 import UIKit
 
-
-var heartsLeft = 3
-var progress: Float = 0.0
-
 class QuizPageViewController: UIViewController {
 
     private var uiFunctions = QuizPageUIFunctions()
