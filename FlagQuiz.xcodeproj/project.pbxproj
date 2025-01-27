@@ -40,6 +40,7 @@
 		C93DE0A42A7BB77B007CDFD2 /* ScorePageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePageUIFunctions.swift; sourceTree = "<group>"; };
 		C93DE0A62A7BBFEA007CDFD2 /* SecondMainPageUIFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMainPageUIFunctions.swift; sourceTree = "<group>"; };
 		C93DE0A82A7BD253007CDFD2 /* FlagManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagManager.swift; sourceTree = "<group>"; };
+		C996EBC42D48374C000C0F4E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		C9A0CBAE2A7A547500071BB0 /* FlagQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A0CBB12A7A547500071BB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9A0CBB32A7A547500071BB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		C9A0CBA52A7A547500071BB0 = {
 			isa = PBXGroup;
 			children = (
+				C996EBC42D48374C000C0F4E /* .gitignore */,
 				C9A0CBB02A7A547500071BB0 /* FlagQuiz */,
 				C9A0CBAF2A7A547500071BB0 /* Products */,
 			);
